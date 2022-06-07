@@ -1,0 +1,6 @@
+[run]
+omit = 
+    *migrations*,
+    *tests*,
+    bibliotecaced*,
+    conftest.py
