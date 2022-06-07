@@ -6,8 +6,11 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
     ports:
       - 8000:8000
+    user: ${MY_UID}:${MY_GID}
     depends_on:
       - db
   db:
