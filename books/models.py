@@ -47,7 +47,7 @@ class Book(TimeStampedModel):
     slug = AutoSlugField(unique=True, always_update=False,
                          populate_from="name")
     image = models.ImageField(upload_to="books/%Y/%m/%d", blank=True)
-    published = models.DateTimeField()
+    published = models.DateField()
     pages = models.IntegerField()
     is_available = models.BooleanField(default=True)
 
