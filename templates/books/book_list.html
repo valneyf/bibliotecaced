@@ -7,7 +7,7 @@
 {% if category %}
 {{ category.name }}
 {% else %}
-Produtos
+Livros
 {% endif %}
 {% endblock title %}
 
@@ -19,7 +19,7 @@ Produtos
             <ul class="list-group mb-3 mb-lg-0">
                 <a class="text-decoration-none list-group-item list-group-item-light {% if not category %}active{% endif %}"
                     href="{% url 'books:list' %}">
-                    Todos os produtos
+                    Todos os livros
                 </a>
 
                 {% for cat in categories %}
@@ -50,7 +50,7 @@ Produtos
                             <p class="card-text font-weight-bold">{{ book.published }}</p>
                         </a>
                         <a class="text-decoration-none text-dark" href="{{ book.get_absolute_url }}">
-                            <p class="card-text font-weight-bold">{{ book.pages }}</p>
+                            <p class="card-text font-weight-bold">{{ book.pages }} páginas</p>
                         </a>
                     </div>
                 </div>

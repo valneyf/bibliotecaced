@@ -28,4 +28,4 @@ class BookAdmin(admin.ModelAdmin):
     ]
     list_filter = ['is_available', 'created', 'modified']
     list_editable = ['category', 'author',
-                     'published', 'pages', 'is_available']
+                     'published', 'pages']

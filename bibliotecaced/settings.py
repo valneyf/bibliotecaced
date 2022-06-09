@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'localflavor',
 
     # bibliotecaced apps
     'users.apps.UsersConfig',
@@ -141,3 +143,6 @@ AUTH_USER_MODEL = 'users.User'
 # Media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Crispy
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

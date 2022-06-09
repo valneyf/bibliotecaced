@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, CreateView
 
 from .models import Category, Book
 
@@ -27,3 +27,8 @@ class BookListView(ListView):
         context["category"] = self.category
         context["categories"] = Category.objects.all()
         return context
+
+
+class BookCreateView(CreateView):
+    model = Book
+    fields = ('name', 'category', 'author', 'published', 'pages', 'image')

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ book.name }}{% endblock title %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+            {% if book.image %}
+            <img class="container-fluid" src="/media/{{book.image}}" alt="">
+            {% else %}
+            <img class="card-img-top" src="{% static 'images/no_image.jpg' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="col-lg-9">
+            <h1 class="font-weight-bold">{{ book.name }}</h1>
+            <h2>{{ book.author }}</h2>
+            <p>Publicado em: {{ book.published }}</p>
+            <p>Contém {{ book.pages }} páginas</p>
+            <p>
+                Voltar para o catálogo de
+                <a class="text-decoration-none" href="{{ book.category.get_absolute_url }}">
+                    {{ book.category.name }}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
