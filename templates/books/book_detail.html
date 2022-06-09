@@ -15,7 +15,7 @@
             <img class="card-img-top" src="{% static 'images/no_image.jpg' %}" alt="">
             {% endif %}
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-6">
             <h1 class="font-weight-bold">{{ book.name }}</h1>
             <h2>{{ book.author }}</h2>
             <p>Publicado em: {{ book.published }}</p>
@@ -26,6 +26,19 @@
                     {{ book.category.name }}
                 </a>
             </p>
+        </div>
+        <div class="col-lg-3">
+            <h1 class="font-weight-bold">Ações</h1>
+            <h2>
+                <a class="text-decoration-none btn btn-warning" href="{% url 'books:edit' %}">
+                    Editar
+                </a>
+            </h2>
+            <h2>
+                <a class="text-decoration-none btn btn-danger" href="{{ book.category.get_absolute_url }}">
+                    Remover
+                </a>
+            </h2>
         </div>
     </div>
 </div>

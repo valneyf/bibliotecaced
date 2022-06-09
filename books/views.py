@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView, ListView, CreateView
+from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from .models import Category, Book
 
@@ -32,3 +33,14 @@ class BookListView(ListView):
 class BookCreateView(CreateView):
     model = Book
     fields = ('name', 'category', 'author', 'published', 'pages', 'image')
+
+
+class BookUpdateView(UpdateView):
+    model = Book
+    fields = ('name', 'category', 'author', 'published', 'pages', 'image')
+    template_name_suffix = '_update_form'
+
+
+class BookDeleteView(DeleteView):
+    model = Book
+    success_url = reverse_lazy('list')
